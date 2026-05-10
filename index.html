@@ -1,106 +1,204 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
     <title>MillionKids Blueprint</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
-    <body style="
+<body style="
 margin:0;
 color:white;
-font-family:'Inter, sans-serif;
-background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-url('background01.jpg');
+font-family:'Inter', sans-serif;
 
-background-size: cover;
-background-position: center;
+background-image:
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+url('./background01.jpg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+min-height:100vh;
 ">
-    <div style="padding:30px;">
-        
-    <h1 style="font-family:'Poppins',sans-serif; font-size:50px; color:red;">
+
+<div style="padding:30px;">
+
+    <!-- TITLE -->
+    <h1 style="
+    font-family:'Poppins',sans-serif;
+    font-size:60px;
+    color:#ff0000;
+    margin-bottom:10px;
+    ">
         MILLION KIDS
     </h1>
 
-    <p style="font-size:22px;">
+    <p style="
+    font-size:22px;
+    color:rgba(255,255,255,0.8);
+    margin-bottom:40px;
+    ">
         MILLION KIDS BLUEPRINT
     </p>
 
+    <!-- CARD CONTAINER -->
     <div style="
-        display:flex;
-        gap:20px;
-        overflow-x:auto;
-        padding-top:20px;
-      ">
-        <!-- BOOK 1 -->
-        <a href="0-9068500529632415211.pdf" style="text-decoration:none; color:white;">
-            <div style="
-                width:200px;
-                background:#111;
-                border-radius:10px;
-                overflow:hidden;
-                position:relative;
-              ">
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    padding-bottom:20px;
+    ">
 
+        <!-- CARD 1 -->
+        <a href="0-9068500529632415211.pdf"
+        style="text-decoration:none; color:white;">
+
+            <div style="
+            position:relative;
+            width:220px;
+            flex-shrink:0;
+            ">
+
+                <!-- BIG NUMBER -->
                 <div style="
-                    position:absolute;
-                    top:5px;
-                    left:10px;
-                    font-size:60px;
-                    font-weight:bold;
-                    color:rgba(255,255,255,0.15);
-                    z-index:1;
+                position:absolute;
+                left:-25px;
+                top:40px;
+
+                font-size:220px;
+                font-weight:900;
+                line-height:1;
+
+                color:transparent;
+                -webkit-text-stroke:4px rgba(255,255,255,0.35);
+
+                z-index:1;
+                font-family:'Poppins',sans-serif;
                 ">
                     1
                 </div>
-                
-                <img src="cover1.jpg" style="width:100%;">
 
-                <div style="padding:15px; font-family:'Poppins', sans-serif;">
-                    <h2>BLUEPRINT 1</h2>
-                    <p>WATCH ME</p>
+                <!-- CARD -->
+                <div style="
+                position:relative;
+                z-index:2;
+
+                background:#111;
+                border-radius:20px;
+                overflow:hidden;
+
+                box-shadow:0 10px 30px rgba(0,0,0,0.5);
+                ">
+
+                    <img src="cover1.jpg"
+                    style="
+                    width:100%;
+                    display:block;
+                    ">
+
+                    <div style="padding:18px;">
+
+                        <h2 style="
+                        margin:0;
+                        font-family:'Poppins',sans-serif;
+                        font-size:32px;
+                        ">
+                            BLUEPRINT 1
+                        </h2>
+
+                        <p style="
+                        opacity:0.8;
+                        margin-top:8px;
+                        ">
+                            WATCH ME
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </a>
 
-        <!-- BOOK 2 -->
-        <a href="Life Mantra Blurry City Life Instagram Post 2.pdf" style="text-decoration:none; color:white;">
+        <!-- CARD 2 -->
+        <a href="Life Mantra Blurry City Life Instagram Post 2.pdf"
+        style="text-decoration:none; color:white;">
 
             <div style="
-                width:200px;
-                background:#111;
-                border-radius:10px;
-                overflow:hidden;
-              ">
+            position:relative;
+            width:220px;
+            flex-shrink:0;
+            ">
 
+                <!-- BIG NUMBER -->
                 <div style="
-                    position:absolute;
-                    top:5px;
-                    left:10px;
-                    font-size:60px;
-                    font-weight:bold;
-                    color:rgba(255,255,255,0.15);
-                    z-index:1;
+                position:absolute;
+                left:-25px;
+                top:40px;
+
+                font-size:220px;
+                font-weight:900;
+                line-height:1;
+
+                color:transparent;
+                -webkit-text-stroke:4px rgba(255,255,255,0.35);
+
+                z-index:1;
+                font-family:'Poppins',sans-serif;
                 ">
                     2
                 </div>
 
-                <img src="cover2.jpg" style="width:100%;">
+                <!-- CARD -->
+                <div style="
+                position:relative;
+                z-index:2;
 
-                <div style="padding:15px; font-family:'Poppins', sans-serif;">
-                    <h2>BLUEPRINT 2</h2>
-                    <p>WATCH ME</p>
+                background:#111;
+                border-radius:20px;
+                overflow:hidden;
+
+                box-shadow:0 10px 30px rgba(0,0,0,0.5);
+                ">
+
+                    <img src="cover2.jpg"
+                    style="
+                    width:100%;
+                    display:block;
+                    ">
+
+                    <div style="padding:18px;">
+
+                        <h2 style="
+                        margin:0;
+                        font-family:'Poppins',sans-serif;
+                        font-size:32px;
+                        ">
+                            BLUEPRINT 2
+                        </h2>
+
+                        <p style="
+                        opacity:0.8;
+                        margin-top:8px;
+                        ">
+                            WATCH ME
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
+
         </a>
+
     </div>
+
 </div>
-    
+
 </body>
 </html>
-        
