@@ -5,7 +5,8 @@
     <title>MillionKids Blueprint</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;900&display=swap" rel="stylesheet">
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
     <style>
 
 #intro{
@@ -31,29 +32,27 @@ overflow:hidden;
 
 #ebookLogo{
 
-font-family:'Inter',sans-serif;
+font-family:'Boldonse', sans-serif;
 
-font-size:125px;
-
-font-weight:900;
+font-size:120px;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-letter-spacing:-5px;
+letter-spacing:-2px;
 
 color:#E50914;
 
-transform:scaleY(1.05);
-
 text-shadow:
 
-0 2px 0 #9b0000,
-0 4px 0 #7d0000,
-0 6px 0 #5f0000,
+0 2px 0 #9a0000,
+0 4px 0 #780000,
+0 6px 0 #5c0000,
 
 0 0 18px rgba(229,9,20,.45);
+
+transform:scaleY(1.02);
 
 }
 
@@ -72,49 +71,74 @@ animation:letterDrop .9s cubic-bezier(.2,.8,.2,1) forwards;
 
 }
 
-.netLetter:nth-child(1){
-transform:translate(-300px,-250px) rotate(-220deg) scale(.2);
-animation-delay:.1s;
+.netLetter{
+
+display:inline-block;
+
+opacity:0;
+
+margin:0 -2px;
+
+animation:
+letterDrop .8s forwards;
+
+animation-delay:var(--delay);
+
 }
 
-.netLetter:nth-child(2){
-transform:translate(260px,-180px) rotate(200deg) scale(.2);
-animation-delay:.18s;
-}
+.oBounce{
 
-.netLetter:nth-child(3){
-transform:translate(-220px,180px) rotate(-180deg) scale(.2);
-animation-delay:.26s;
-}
+animation:
+letterDrop .8s forwards,
+oJump .8s ease forwards;
 
-.netLetter:nth-child(4){
-transform:translate(240px,220px) rotate(160deg) scale(.2);
-animation-delay:.34s;
-}
+animation-delay:
+var(--delay),
+1s;
 
-.netLetter:nth-child(5){
-transform:translate(-260px,0px) rotate(-250deg) scale(.2);
-animation-delay:.42s;
-}
-
-.netLetter:nth-child(6){
-transform:translate(200px,-80px) rotate(250deg) scale(.2);
-animation-delay:.50s;
 }
 
 @keyframes letterDrop{
 
-100%{
-
-opacity:1;
-
+0%{
+opacity:0;
 transform:
-translate(0,0)
-rotate(0deg)
+translateY(-100px)
+rotate(-30deg)
+scale(.5);
+}
+
+100%{
+opacity:1;
+transform:
+translateY(0)
+rotate(0)
 scale(1);
+}
 
 }
 
+@keyframes oJump{
+
+0%{
+transform:translateY(0);
+}
+
+30%{
+transform:translateY(-35px);
+}
+
+55%{
+transform:translateY(0);
+}
+
+75%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
 }
 
 </style>
@@ -142,12 +166,14 @@ overflow-x:auto;
 
 <div id="ebookLogo">
 
-<span class="netLetter">E</span>
-<span class="netLetter">-</span>
-<span class="netLetter">B</span>
-<span class="netLetter">O</span>
-<span class="netLetter">O</span>
-<span class="netLetter">K</span>
+<span class="netLetter" style="--delay:.05s">E</span>
+<span class="netLetter" style="--delay:.12s">-</span>
+<span class="netLetter" style="--delay:.20s">B</span>
+
+<span class="netLetter oBounce" style="--delay:.28s">O</span>
+
+<span class="netLetter" style="--delay:.36s">O</span>
+<span class="netLetter" style="--delay:.44s">K</span>
 
 </div>
 
