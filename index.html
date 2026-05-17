@@ -41,7 +41,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-letter-spacing:-2px;
+letter-spacing:-5px;
 
 color:#E50914;
 
@@ -59,38 +59,60 @@ text-shadow:
 
 .netLetter{
 
-opacity:0;
-
 display:inline-block;
 
-animation:netBuild .28s forwards;
-
-transform-origin:center bottom;
-
-margin-left:-1px;
-
-}
-
-@keyframes netBuild{
-
-0%{
 opacity:0;
-transform:
-scaleY(0)
-translateY(80px);
+
+font-family:'Inter',sans-serif;
+font-weight:900;
+
+margin:0 -1px;
+
+animation:letterDrop .9s cubic-bezier(.2,.8,.2,1) forwards;
+
 }
 
-40%{
-opacity:1;
-transform:
-scaleY(1.45)
-translateY(0px);
+.netLetter:nth-child(1){
+transform:translate(-300px,-250px) rotate(-220deg) scale(.2);
+animation-delay:.1s;
 }
+
+.netLetter:nth-child(2){
+transform:translate(260px,-180px) rotate(200deg) scale(.2);
+animation-delay:.18s;
+}
+
+.netLetter:nth-child(3){
+transform:translate(-220px,180px) rotate(-180deg) scale(.2);
+animation-delay:.26s;
+}
+
+.netLetter:nth-child(4){
+transform:translate(240px,220px) rotate(160deg) scale(.2);
+animation-delay:.34s;
+}
+
+.netLetter:nth-child(5){
+transform:translate(-260px,0px) rotate(-250deg) scale(.2);
+animation-delay:.42s;
+}
+
+.netLetter:nth-child(6){
+transform:translate(200px,-80px) rotate(250deg) scale(.2);
+animation-delay:.50s;
+}
+
+@keyframes letterDrop{
 
 100%{
+
 opacity:1;
+
 transform:
-scaleY(1);
+translate(0,0)
+rotate(0deg)
+scale(1);
+
 }
 
 }
@@ -119,7 +141,14 @@ overflow-x:auto;
 <div id="intro">
 
 <div id="ebookLogo">
-E-BOOK
+
+<span class="netLetter">E</span>
+<span class="netLetter">-</span>
+<span class="netLetter">B</span>
+<span class="netLetter">O</span>
+<span class="netLetter">O</span>
+<span class="netLetter">K</span>
+
 </div>
 
 </div>
