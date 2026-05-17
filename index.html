@@ -30,44 +30,75 @@ overflow:hidden;
 }
 
 #ebookLogo{
+
 font-family:'Poppins',sans-serif;
-font-size:120px;
+font-size:130px;
 font-weight:900;
-color:#e50914;
-letter-spacing:4px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+letter-spacing:-2px;
+
+color:#E50914;
+
+overflow:hidden;
+
+text-shadow:
+0 0 20px #E50914,
+0 0 40px #E50914;
+
 }
 
-.firstLetter{
-display:inline-block;
-animation:nStart 1.4s forwards;
-}
+.netLetter{
 
-.restLetters{
 opacity:0;
+
 display:inline-block;
-transform:translateX(-80px);
-transition:1s;
+
+transform:
+translateX(-80px)
+scale(2);
+
+animation:netIn .45s forwards;
+
 }
 
-@keyframes nStart{
+@keyframes netIn{
 
 0%{
+
 opacity:0;
-transform:scale(3);
+
+transform:
+translateX(-80px)
+scale(2);
+
 filter:blur(20px);
+
 }
 
 50%{
+
 opacity:1;
-transform:scale(1);
+
 text-shadow:
 0 0 30px red,
-0 0 60px red;
+0 0 80px red;
+
 }
 
 100%{
+
 opacity:1;
+
+transform:
+translateX(0)
+scale(1);
+
 }
+
 }
 
 </style>
@@ -589,21 +620,36 @@ HELP DESK
 </div>
 </div>
 
-  <script>
+<script>
 
 window.onload=function(){
 
+const text="E-BOOK";
 const logo=document.getElementById("ebookLogo");
 
-logo.innerHTML=`
-<span class="firstLetter">E</span>
-<span class="restLetters">-BOOK</span>
-`;
+logo.innerHTML="";
 
-setTimeout(()=>{
-document.querySelector(".restLetters").style.opacity="1";
-document.querySelector(".restLetters").style.transform="translateX(0px)";
-},1200);
+let i=0;
+
+let createLetter=setInterval(()=>{
+
+if(i<text.length){
+
+let span=document.createElement("span");
+
+span.innerText=text[i];
+
+span.className="netLetter";
+
+span.style.animationDelay=(i*0.08)+"s";
+
+logo.appendChild(span);
+
+i++;
+
+}else{
+
+clearInterval(createLetter);
 
 setTimeout(()=>{
 
@@ -611,7 +657,7 @@ document.getElementById("mainSite")
 .style.opacity="1";
 
 document.getElementById("intro")
-.style.transition="1s";
+.style.transition="1.2s";
 
 document.getElementById("intro")
 .style.opacity="0";
@@ -620,7 +666,11 @@ setTimeout(()=>{
 document.getElementById("intro").remove();
 },1000)
 
-},4200)
+},1800)
+
+}
+
+},90)
 
 }
 
