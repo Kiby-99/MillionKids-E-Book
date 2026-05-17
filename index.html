@@ -30,81 +30,114 @@ overflow:hidden;
 }
 
 #ebookLogo{
-position:relative;
-font-family:'Poppins',sans-serif;
-font-size:120px;
+
+font-family:
+Arial Black,
+sans-serif;
+
+font-size:125px;
 font-weight:900;
+
+letter-spacing:-10px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
 color:#E50914;
-letter-spacing:-3px;
+
 overflow:hidden;
+
+text-shadow:
+0 0 15px #E50914,
+0 0 35px #E50914;
+
 }
 
 .netLetter{
+
 opacity:0;
+
 display:inline-block;
-transform:scaleY(0);
-animation:letterBuild .18s forwards;
-}
 
-@keyframes letterBuild{
+position:relative;
 
-0%{
-opacity:0;
 transform:
-scaleY(0)
-translateY(40px);
+translateX(-12px)
+scaleY(0);
 
-filter:blur(15px);
-}
+animation:
+letterBuild .18s forwards;
 
-60%{
-opacity:1;
-transform:
-scaleY(1.3);
-
-text-shadow:
-0 0 25px red,
-0 0 50px red;
-}
-
-100%{
-opacity:1;
-transform:
-scaleY(1);
-}
+overflow:hidden;
 
 }
 
-#lightSweep{
+.netLetter:after{
+
+content:"";
+
 position:absolute;
 
-top:-100px;
-left:-200px;
+top:0;
+left:-120%;
 
-width:120px;
-height:350px;
+width:70%;
+height:100%;
 
 background:
 linear-gradient(
 90deg,
 transparent,
-rgba(255,255,255,.95),
+rgba(255,255,255,.55),
 transparent
 );
 
-transform:rotate(18deg);
+transform:skewX(-25deg);
 
-animation:sweep 1.2s forwards;
+animation:
+insideLight .5s forwards;
+
+animation-delay:inherit;
+
 }
 
-@keyframes sweep{
+@keyframes insideLight{
 
 0%{
-left:-300px;
+left:-120%;
 }
 
 100%{
-left:700px;
+left:160%;
+}
+
+}
+
+@keyframes letterBuild{
+
+0%{
+
+opacity:0;
+
+transform:
+translateX(-10px)
+scaleY(.2);
+
+filter:blur(10px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+translateX(0)
+scaleY(1);
+
 }
 
 }
@@ -658,7 +691,7 @@ logo.appendChild(letter);
 
 i++;
 
-setTimeout(build,80);
+setTimeout(build,55);
 
 }else{
 
