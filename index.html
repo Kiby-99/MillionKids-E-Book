@@ -5,6 +5,86 @@
     <title>MillionKids Blueprint</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:999999;
+
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.85)),
+url('./intro-bg.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+#ebookLogo{
+
+font-family:'Poppins',sans-serif;
+font-size:130px;
+font-weight:900;
+
+color:#ff0000;
+
+letter-spacing:10px;
+
+opacity:0;
+
+transform:scale(.2);
+
+text-shadow:
+0 0 20px rgba(255,0,0,.8),
+0 0 70px rgba(255,0,0,.4);
+
+}
+
+#mainSite{
+opacity:0;
+transition:1s;
+}
+
+@keyframes netflixIntro{
+
+0%{
+opacity:0;
+transform:scale(.2);
+letter-spacing:40px;
+filter:blur(10px);
+}
+
+35%{
+opacity:1;
+transform:scale(1);
+letter-spacing:10px;
+filter:blur(0px);
+}
+
+70%{
+opacity:1;
+transform:scale(1.15);
+}
+
+100%{
+opacity:0;
+transform:scale(7);
+filter:blur(10px);
+}
+
+}
+
+</style>
+    
 </head>
 
 <body style="
@@ -24,7 +104,16 @@ background-attachment:fixed;
 min-height:100vh;
 overflow-x:auto;
 ">
+<div id="intro">
 
+<div id="ebookLogo">
+E-BOOK
+</div>
+
+</div>
+
+<div id="mainSite">
+    
 <!-- PREMIUM HELP DESK BUTTON -->
 <a href="https://t.me/syfqmhmd?text=Hello%20Admin,%20can%20you%20help%20me%20%3F"
 target="_blank"
@@ -511,6 +600,38 @@ HELP DESK
     </div>
 
 </div>
+</div>
 
+<script>
+
+window.onload=function(){
+
+document.getElementById("ebookLogo")
+.style.animation=
+"netflixIntro 3.8s forwards";
+
+setTimeout(()=>{
+
+document.getElementById("mainSite")
+.style.opacity="1";
+
+document.getElementById("intro")
+.style.transition=".8s";
+
+document.getElementById("intro")
+.style.opacity="0";
+
+setTimeout(()=>{
+
+document.getElementById("intro")
+.remove();
+
+},800)
+
+},3300)
+
+}
+
+</script>
 </body>
 </html>
