@@ -29,31 +29,20 @@ align-items:center;
 overflow:hidden;
 }
 
-#ebookLogo{
-
-font-family:
-Arial Black,
-sans-serif;
-
-font-size:125px;
+ #ebookLogo{
+font-family:'Arial Narrow',sans-serif;
 font-weight:900;
-
-letter-spacing:-10px;
+font-size:135px;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-position:relative;
+letter-spacing:-16px;
 
 color:#E50914;
 
-overflow:hidden;
-
-text-shadow:
-0 0 15px #E50914,
-0 0 35px #E50914;
-
+transform:scaleY(1.15);
 }
 
 .netLetter{
@@ -62,82 +51,32 @@ opacity:0;
 
 display:inline-block;
 
-position:relative;
+animation:netBuild .35s forwards;
 
-transform:
-translateX(-12px)
-scaleY(0);
-
-animation:
-letterBuild .18s forwards;
-
-overflow:hidden;
+transform-origin:center bottom;
 
 }
 
-.netLetter:after{
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:-120%;
-
-width:70%;
-height:100%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.55),
-transparent
-);
-
-transform:skewX(-25deg);
-
-animation:
-insideLight .5s forwards;
-
-animation-delay:inherit;
-
-}
-
-@keyframes insideLight{
+@keyframes netBuild{
 
 0%{
-left:-120%;
-}
-
-100%{
-left:160%;
-}
-
-}
-
-@keyframes letterBuild{
-
-0%{
-
 opacity:0;
-
 transform:
-translateX(-10px)
-scaleY(.2);
+scaleY(0)
+translateY(80px);
+}
 
-filter:blur(10px);
-
+40%{
+opacity:1;
+transform:
+scaleY(1.45)
+translateY(0px);
 }
 
 100%{
-
 opacity:1;
-
 transform:
-translateX(0)
 scaleY(1);
-
 }
 
 }
@@ -668,58 +607,60 @@ window.onload=function(){
 const logo=
 document.getElementById("ebookLogo");
 
-logo.innerHTML=
-`<div id="lightSweep"></div>`;
+logo.innerHTML="";
 
 const text="E-BOOK";
 
 let i=0;
 
-function build(){
+function addLetter(){
 
 if(i<text.length){
 
-let letter=
+let s=
 document.createElement("span");
 
-letter.innerText=text[i];
+s.className="netLetter";
 
-letter.className=
-"netLetter";
+s.style.animationDelay=
+(i*0.045)+"s";
 
-logo.appendChild(letter);
+s.innerText=text[i];
+
+logo.appendChild(s);
 
 i++;
 
-setTimeout(build,55);
+setTimeout(addLetter,45);
 
 }else{
 
 setTimeout(()=>{
 
-document.getElementById(
-"mainSite"
-).style.opacity="1";
+document.getElementById("mainSite")
+.style.opacity="1";
 
-document.getElementById(
-"intro"
-).style.opacity="0";
+document.getElementById("intro")
+.style.transition=
+"1s";
+
+document.getElementById("intro")
+.style.opacity="0";
 
 setTimeout(()=>{
 
-document.getElementById(
-"intro"
-).remove();
+document.getElementById("intro")
+.remove();
 
 },1000)
 
-},2000)
+},1200)
 
 }
 
 }
 
-build();
+addLetter()
 
 }
 
